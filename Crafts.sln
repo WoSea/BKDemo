@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestProject", "NUnitTestProject\NUnitTestProject.csproj", "{975EF13B-ECDF-40A2-95C9-43108AF402CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIDesign", "APIDesign\APIDesign.csproj", "{C869375E-D2DC-4EB9-A852-5C60D60C01C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIDesign", "APIDesign\APIDesign.csproj", "{C869375E-D2DC-4EB9-A852-5C60D60C01C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

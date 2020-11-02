@@ -1,7 +1,5 @@
-﻿using System;
-using System.CodeDom;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject
 {
@@ -18,7 +16,7 @@ namespace UnitTestProject
             Assert.IsTrue(true);
         }
 
-       
+
         private static void WriteSeparatorLine()
         {
             Debug.WriteLine("===========================================");
@@ -46,7 +44,7 @@ namespace UnitTestProject
             WriteSeparatorLine();
             Debug.WriteLine("Optional: TestInitialize");
             Debug.WriteLine("Execute once before each test.");
-        } 
+        }
 
         [AssemblyCleanup]
         public static void AssemblyCleanup()
@@ -59,7 +57,7 @@ namespace UnitTestProject
         public static void TestFixtureTearDown()
         {
             WriteSeparatorLine();
-            Debug.WriteLine("Optional: ClassCleanup"); 
+            Debug.WriteLine("Optional: ClassCleanup");
             Debug.WriteLine("Runs once after all tests in the class have been executed.");
             Debug.WriteLine("Not guaranteed that it executes instantly after all tests the class have executed.");
         }
@@ -71,5 +69,5 @@ namespace UnitTestProject
             Debug.WriteLine("Runs after each test.");
             Assert.Fail();
         }
-     }
+    }
 }
