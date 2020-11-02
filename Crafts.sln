@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestProject", "NUnitTe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIDesign", "APIDesign\APIDesign.csproj", "{C869375E-D2DC-4EB9-A852-5C60D60C01C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS", "CQRS\CQRS.csproj", "{41D52EAA-3CD9-411E-ADD1-0367104BD23A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C869375E-D2DC-4EB9-A852-5C60D60C01C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C869375E-D2DC-4EB9-A852-5C60D60C01C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C869375E-D2DC-4EB9-A852-5C60D60C01C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D52EAA-3CD9-411E-ADD1-0367104BD23A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D52EAA-3CD9-411E-ADD1-0367104BD23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D52EAA-3CD9-411E-ADD1-0367104BD23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D52EAA-3CD9-411E-ADD1-0367104BD23A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
