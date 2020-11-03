@@ -32,9 +32,12 @@ namespace CQRS
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //Before implementing MediatR
+           // services.AddScoped<IGetOrderByIdQueryHandler,GetOrderByIdQueryHandler>();
+            //services.AddScoped<IMakeOrderCommandHandler,MakeOrderCommandHandler>();
+
+            //Implementing MediatR
             services.AddMediatR(Assembly.GetExecutingAssembly());
-            services.AddScoped<IGetOrderByIdQueryHandler,GetOrderByIdQueryHandler>();
-            services.AddScoped<IMakeOrderCommandHandler,MakeOrderCommandHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

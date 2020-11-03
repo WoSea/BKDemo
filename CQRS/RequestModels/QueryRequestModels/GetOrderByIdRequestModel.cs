@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CQRS.RequestModels.QueryRequestModels
 {
-    public class GetOrderByIdRequestModel 
+    public class GetOrderByIdRequestModel:IRequest<GetOrderByIdResponseModel>
     {
         public Guid OrderId { get; set; }
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CQRS.RequestModels.CommandRequestModels
 {
-    public class MakeOrderRequestModel 
+    public class MakeOrderRequestModel : IRequest<MakeOrderResponseModel>
     {       
         //using prop + Tab in Visual Studio
         public Guid OrderId { get; set; }
