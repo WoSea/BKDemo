@@ -1,4 +1,5 @@
-﻿using CQRS.RequestModels.QueryRequestModels;
+﻿
+using CQRS.RequestModels.QueryRequestModels;
 using CQRS.ResponseModels.QueryResponseModels;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CQRS.Interfaces.IQueryHandlers
 {
-    public class IGetOrderByIdQueryHandler
+    public interface IGetOrderByIdQueryHandler
     {
         GetOrderByIdResponseModel GetOrderById(GetOrderByIdRequestModel requestModel);
     }

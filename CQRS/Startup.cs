@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using CQRS.Handlers.CommandHandlers;
+using CQRS.Handlers.QueryHandlers;
+using CQRS.Interfaces.ICommandHandlers;
+using CQRS.Interfaces.IQueryHandlers;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +33,8 @@ namespace CQRS
         {
             services.AddControllers();
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddScoped<IGetOrderByIdQueryHandler,GetOrderByIdQueryHandler>();
+            services.AddScoped<IMakeOrderCommandHandler,MakeOrderCommandHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
