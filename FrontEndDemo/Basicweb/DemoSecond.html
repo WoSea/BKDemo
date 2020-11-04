@@ -4,7 +4,8 @@
     </head>
 
     <body>
-        <script>  
+        <div id=errorMessage> </div>
+       <script>  
              if(1>0)
              {
                 //alert('1>0');
@@ -17,13 +18,52 @@
              var ageNumber= parseInt(age);
              if(ageNumber<16)
              {
-                alert('You don\'t have permission to access this page');
+               // alert('You don\'t have permission to access this page');
              }
              else {
-                 alert("Hello. Welcome to my Website");
+                // alert("Hello. Welcome to my Website");
              }
 
         </script>
+
+        <script>
+            switch(ageNumber){
+                case 16: alert('You are '+ageNumber);
+                case 16: alert('You don\'t have permission to access this page');
+                case 17: alert("Hello. Welcome to my Website");
+                default:       alert("Welcome to my Website");
+            }
+        </script>    
  
+        <script>
+            var userName= "Bob";
+            function modifyUserName(){
+                userName="Bob 2";
+            }
+            function showUserName(){
+                console.log(userName);
+            }
+            showUserName();
+            modifyUserName();
+            showUserName();
+        </script>
+        <script> // not usefull
+            eval("console.log(userName+' Hello');");
+        </script>
+        <script>
+                try{
+                    var a= 10; var b=0;
+                    var result= a/b;
+                  /*   throw{
+                            code:101,
+                            message: "Error division"
+                    }; */
+                }catch(ex){
+                        document.getElementById("errorMessage").innerHTML=ex.message;
+                }
+                finally{
+                    console.log('Finally block executed');
+                }
+        </script>
     </body>
 </html>
