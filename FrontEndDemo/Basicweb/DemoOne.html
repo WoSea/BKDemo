@@ -1,0 +1,92 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <script> // Date demo
+            var dateFirst= new Date();
+            console.log(dateFirst);
+            var dateSecond = new Date (1500);
+            console.log(dateSecond);
+
+            var dateThird = new Date ("11/4/2020");
+            console.log(dateThird);
+            
+            var dateFourth = new Date ("November,2020,03");
+            console.log(dateFourth);
+            console.log(dateFourth.getFullYear());
+
+
+            console.log(Date.parse("04/11/2020"));
+        </script>
+
+        <script>  // Array
+            //First way
+            var arr1=[1,2,4,6,7,4,5];
+            var arr2=["one","two","three","four","five","six","seven"];
+            var arr3= [1,"one",true];
+            console.log(arr1[2]);
+
+            //Second way
+            var arr4=new Array();
+            arr4[0]="Spring";
+            arr4[1]="Summer";
+            arr4[2]="Autumn";
+            arr4[3]="Winter";
+            console.log(arr4);
+
+           //Third way
+            var arr5=new Array(3);
+            arr5[0]="Spring";
+            arr5[1]="Summer";
+            arr5[2]="Autumn"; 
+            console.log(arr5);
+
+            for(var i=0;i<arr5.length;i++){
+                console.log(arr5[i]);
+            }
+        </script>
+
+        <script>//NUll and undefined
+                var a;
+                console.log(a);
+                a=null;
+                console.log(a);
+        </script>
+        <script> //Function
+                function ShowMessage(){
+                    alert('Hello world');   
+                }
+                ShowMessage();
+                function ShowMessage(firstName,lastName){
+                    alert('Hello '+firstName+" "+lastName);   
+                }
+                ShowMessage("Juno","Posa");
+
+                function ShowMessage(firstName,lastName){
+                    alert('Hello '+arguments[0]+" "+arguments[1]);   
+                }
+                ShowMessage("Juno2","Posa2");
+
+                var a =ShowMessage();
+                console.log(a);
+
+                function ShowMessage(firstName,lastName){
+                    return 'Hello 2 '+arguments[0]+" "+arguments[1];   
+                }
+                
+                a = ShowMessage("Juno2","Posa2");
+                console.log(a);
+                
+                function calulator(a,b){
+                        function add(a,b){
+                            return a+b;
+                        }    
+                        return add;
+                }
+                var c= calulator(10,29);
+                console.log(c(11,23) );
+        </script>
+    </body>
+</html>
