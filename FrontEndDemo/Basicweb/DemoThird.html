@@ -17,5 +17,66 @@
             } 
             foo();
         </script>
+        <script>
+            function Person(){
+                this.firstName = "unknown";
+                this.lastName = "unknown";
+                this.getFullName = function(){
+                    return this.firstName+ ' '+ this.lastName;
+                }
+            }
+            var person1= new Person();
+            person1.firstName="Nguyen";
+            person1.lastName= "Van A";
+            console.log(person1.firstName+ ' '+person1.lastName);
+
+            var person2= new Person();
+            person2.firstName="Nguyen";
+            person2.lastName= "Van B";
+            person2.age=26;
+            console.log(person2.getFullName());
+
+            function Person(_firstName,_lastName,_Age){
+                this.firstName = _firstName;
+                this.lastName = _lastName;
+                this.age= _Age;
+                this.getFullName = function(){
+                    return this.firstName+ ' '+ this.lastName + ' '+ this.age;
+                }
+            }
+            var person3= new Person("Nguyen","Van C",23);
+            console.log(person3.getFullName());
+        </script>
+
+        <script>
+            function Person3(){
+                var _firstName = "unknown";
+                var _lastName = "unknown";
+                Object.defineProperties(this,{
+
+                    "FirstName":{
+                        set:function(value){
+                            _firstName=value;
+                        },
+                        get:function(){
+                            return _firstName;
+                        }
+                    },
+                    "LastName":{
+                        set:function(value){
+                            _lastName=value;
+                        },
+                        get:function(){
+                            return _lastName;
+                        }
+                    }
+                });
+            }
+            var person4=new Person2();
+            person4.FirstName="Nguyen";
+            person4.LastName="ABC"; 
+            console.log(person4.FirstName+ " "+ person4.LastName  );
+            console.log(Object.keys(person4));
+        </script>
     </body>
 </html> 
