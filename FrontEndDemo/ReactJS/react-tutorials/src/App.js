@@ -33,28 +33,26 @@ function App() {
       setShowPerson(!showPerson);
   };
 
-
+  let personsList =null;
+  if(showPerson===true){
+    personsList=
+    <div> 
+      {
+        persons.map(item =>{
+         return ( 
+           <Person click={()=>changeNameHandler()}  changed={switchNameHandler}
+            name={item.name} age={item.age}></Person>
+          );
+        })
+      } 
+    </div>  
+  }
   return (
       <>
-
         <div className="App">
             <h1>React application</h1>
-            <button onClick={(e) => togglePersons()}>Toggle Person</button>
-                {
-                  showPerson===true?      
-                  (   
-                      <div> <Person click={()=>changeNameHandler()}  changed={switchNameHandler}
-                          name={persons[0].name} age={persons[0].age}></Person>
-                        
-                          <Person click={changeNameHandler}   changed={switchNameHandler}
-                            name={persons[1].name} age={persons[1].age}></Person>
-
-                          <Person click={changeNameHandler}  changed={switchNameHandler}
-                          name={persons[2].name} age={persons[2].age}></Person> 
-                        </div>  
-                  ) :null
-                }
-     
+            <button onClick={() => togglePersons()}>Toggle Persons</button>
+                {personsList }
            {/* <Example></Example> */}
         </div>
     </>
