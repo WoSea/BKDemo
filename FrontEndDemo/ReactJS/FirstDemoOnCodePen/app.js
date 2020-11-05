@@ -14,4 +14,5 @@ var app = (
     <Person name="Red" age="45" />
 </div>
  )
- ReactDOM.render(app,document.querySelector('#root')); 
+ ReactDOM.render(app,document.querySelector('#root'));
+ 
