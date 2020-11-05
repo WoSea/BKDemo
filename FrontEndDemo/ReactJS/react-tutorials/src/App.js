@@ -23,7 +23,8 @@ function App() {
   const switchNameHandler =(event)=>{
     setPersons([
       {name:event.target.value, age:14},
-      {name:event.target.value, age:33},
+      {name:event.target.value,
+         age:33},
       {name:event.target.value, age:52},
     ]);
   };
