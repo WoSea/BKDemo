@@ -4,7 +4,7 @@ import  Person from './components/Person/Person';
 import  Example  from './components/Example';
 
 function App() {
-
+  const [showPerson, setShowPerson] = useState(true);
   const [persons,setPersons] = useState([
     {name:"Red", age:4},
     {name:"Green", age:43},
@@ -28,22 +28,35 @@ function App() {
       {name:event.target.value, age:52},
     ]);
   };
+
+  const togglePersons=()=>{
+      setShowPerson(!showPerson);
+  };
+
+
   return (
       <>
 
         <div className="App">
             <h1>React application</h1>
-            <button onClick={(e) => changeNameHandler()}>Change Name</button>
-            <Person click={()=>changeNameHandler()}  changed={switchNameHandler}
-             name={persons[0].name} age={persons[0].age}></Person>
-           
-            <Person click={changeNameHandler}   changed={switchNameHandler}
-              name={persons[1].name} age={persons[1].age}></Person>
+            <button onClick={(e) => togglePersons()}>Toggle Person</button>
+                {
+                  showPerson===true?      
+                  (   
+                      <div> <Person click={()=>changeNameHandler()}  changed={switchNameHandler}
+                          name={persons[0].name} age={persons[0].age}></Person>
+                        
+                          <Person click={changeNameHandler}   changed={switchNameHandler}
+                            name={persons[1].name} age={persons[1].age}></Person>
 
-            <Person click={changeNameHandler}  changed={switchNameHandler}
-            name={persons[2].name} age={persons[2].age}></Person>
-            <Example></Example>
-        </div>  
+                          <Person click={changeNameHandler}  changed={switchNameHandler}
+                          name={persons[2].name} age={persons[2].age}></Person> 
+                        </div>  
+                  ) :null
+                }
+     
+           {/* <Example></Example> */}
+        </div>
     </>
   );
 }
