@@ -19,14 +19,10 @@ import './Person.css';
 //         );
 //     }
 // }
-const Person = (props)=>{
-    const styles = {
-        color:'red',
-        fontWeight:'bold'
-    }
+const Person = (props)=>{ 
     return ( 
     <div className="Person">
-    <p style={styles} onClick={props.click}>Welcome. {props.name} is {props.age} year old</p>
+    <p   onClick={props.click}>Welcome. {props.name} is {props.age} year old</p>
     <h3  >{props.children}</h3> 
     <input type="text" onChange={props.changed}></input>
     </div>

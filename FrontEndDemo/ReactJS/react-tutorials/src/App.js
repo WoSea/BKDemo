@@ -39,6 +39,15 @@ function App() {
       setPersons(newPersons);
   }
   let personsList =null;
+  const styles={
+    backgroundColor : 'white',
+    font:'inherit',
+    border:'1px solid green',
+    padding:'8px',
+    cursor:'pointer',
+    color:'white'
+  };
+
   if(showPerson===true){
     personsList=
     <div> 
@@ -52,12 +61,13 @@ function App() {
         })
       } 
     </div>  
-  }
+  };
+  styles.backgroundColor="red";
   return (
       <>
         <div className="App">
             <h1>React application</h1>
-            <button onClick={() => togglePersons()}>Toggle Persons</button>
+            <button style={styles} onClick={() => togglePersons()}>Toggle Persons</button>
                 {personsList }
            {/* <Example></Example> */}
         </div>
