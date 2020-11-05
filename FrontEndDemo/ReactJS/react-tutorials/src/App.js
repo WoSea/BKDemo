@@ -33,14 +33,20 @@ function App() {
       setShowPerson(!showPerson);
   };
 
+  const deletePerson=(personIndex)=>{
+      let newPersons=[...persons];
+      newPersons.splice(personIndex,1);
+      setPersons(newPersons);
+  }
   let personsList =null;
   if(showPerson===true){
     personsList=
     <div> 
       {
-        persons.map(item =>{
+        persons.map((item,index)=>{
          return ( 
-           <Person click={()=>changeNameHandler()}  changed={switchNameHandler}
+           <Person key={index}
+           click={()=>deletePerson(index)}  changed={switchNameHandler}
             name={item.name} age={item.age}></Person>
           );
         })
