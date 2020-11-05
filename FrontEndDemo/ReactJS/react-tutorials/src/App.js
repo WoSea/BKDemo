@@ -18,16 +18,29 @@ function App() {
       {name:"White", age:52},
   
     ]);
-  }
+  };
+
+  const switchNameHandler =(event)=>{
+    setPersons([
+      {name:event.target.value, age:14},
+      {name:event.target.value, age:33},
+      {name:event.target.value, age:52},
+    ]);
+  };
   return (
       <>
 
         <div className="App">
             <h1>React application</h1>
             <button onClick={(e) => changeNameHandler()}>Change Name</button>
-            <Person click={changeNameHandler} name={persons[0].name} age={persons[0].age}></Person>
-            <Person click={changeNameHandler} name={persons[1].name} age={persons[1].age}></Person>
-            <Person click={changeNameHandler} name={persons[2].name} age={persons[2].age}></Person>
+            <Person click={()=>changeNameHandler()}  changed={switchNameHandler}
+             name={persons[0].name} age={persons[0].age}></Person>
+           
+            <Person click={changeNameHandler}   changed={switchNameHandler}
+              name={persons[1].name} age={persons[1].age}></Person>
+
+            <Person click={changeNameHandler}  changed={switchNameHandler}
+            name={persons[2].name} age={persons[2].age}></Person>
             <Example></Example>
         </div>  
     </>
