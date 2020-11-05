@@ -48,6 +48,10 @@ function App() {
     color:'white'
   };
 
+  let classes=[];
+if(persons.length<=2 ){ classes.push('red');}
+if(persons.length<=1 ){ classes.push('bold');}
+
   if(showPerson===true){
     personsList=
     <div> 
@@ -67,6 +71,7 @@ function App() {
       <>
         <div className="App">
             <h1>React application</h1>
+            <p className={classes.join(' ')}>This is dynamic class paragraph</p>
             <button style={styles} onClick={() => togglePersons()}>Toggle Persons</button>
                 {personsList }
            {/* <Example></Example> */}
