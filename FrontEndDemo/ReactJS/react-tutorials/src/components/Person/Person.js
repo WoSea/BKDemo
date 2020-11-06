@@ -1,6 +1,7 @@
 // import React ,{Component} from "react";
 import React  from "react";
 import './Person.css';
+import Radium from 'radium';
 
 // const Person = (props)=>{
 //     return ( 
@@ -20,8 +21,14 @@ import './Person.css';
 //     }
 // }
 const Person = (props)=>{ 
+
+    const styles={
+        '@media(min-width:500)':{
+            width:'450px',
+        }
+    }
     return ( 
-    <div className="Person">
+    <div className="Person" style={styles}>
     <p   onClick={props.click}>Welcome. {props.name} is {props.age} year old</p>
     <h3  >{props.children}</h3> 
     <input type="text" onChange={props.changed}></input>
@@ -29,4 +36,4 @@ const Person = (props)=>{
     );
 
 };
-export default Person;
+export default Radium(Person);

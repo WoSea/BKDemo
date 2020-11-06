@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import "./App.css";
 import  Person from './components/Person/Person'; 
 import  Example  from './components/Example';
+import Radium ,{StyleRoot} from 'radium' 
 
 function App() {
   const [showPerson, setShowPerson] = useState(true);
@@ -45,7 +46,11 @@ function App() {
     border:'1px solid green',
     padding:'8px',
     cursor:'pointer',
-    color:'white'
+    color:'white',
+    ':hover':{
+      backgroundColor:'lightgreen',
+      color:'black'
+    }
   };
 
   let classes=[];
@@ -67,8 +72,12 @@ if(persons.length<=1 ){ classes.push('bold');}
     </div>  
   };
   styles.backgroundColor="red";
+  styles[':hover']={
+    backgroundColor:'lightgreen',
+    color:'black',
+  };
   return (
-      <>
+      <StyleRoot>
         <div className="App">
             <h1>React application</h1>
             <p className={classes.join(' ')}>This is dynamic class paragraph</p>
@@ -76,7 +85,7 @@ if(persons.length<=1 ){ classes.push('bold');}
                 {personsList }
            {/* <Example></Example> */}
         </div>
-    </>
+    </StyleRoot>
   );
 }
 /*function App() {
@@ -117,4 +126,4 @@ if(persons.length<=1 ){ classes.push('bold');}
   }
 }*/
 
-export default App;
+export default Radium(App);
